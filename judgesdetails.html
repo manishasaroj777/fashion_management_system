@@ -1,0 +1,130 @@
+<!doctype html>
+
+<html>
+<meta charset="utf-8">
+<head><title>Judges Form</title>
+<link rel="stylesheet" href="css/cssfile.css">
+<link rel="stylesheet" href="css/cssfilemenu.css">
+<script type="text/javascript">
+function valid()
+{
+var jn=document.regis.jnm.value;
+var jm=document.regis.jmb.value;
+var jad=document.regis.jaddr.value;
+var jem=document.regis.jemail.value;
+var jdt=document.regis.dt.value;
+var regex = /^[a-zA-Z ]{2,30}$/;
+var re=/^(\+91-|\+91|0)?\d{10}$/;
+var emch=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+if (!regex.test(jn)) 
+{
+   
+     document.regis.jnm.value="";
+    document.regis.jnm.focus();
+    return false;
+}
+if(!re.test(jm))
+{
+document.regis.jmb.value="";
+document.regis.jmb.focus();
+return false;
+}
+if(jem=="")
+ {
+ document.regis.jemail.focus();
+ return false;
+}
+if(!emch.test(jem))
+{
+document.regis.jemail.value="";
+document.regis.jemail.focus();
+return false;
+}
+
+if(jdt=="")
+ {
+ document.regis.dt.focus();
+ return false;
+}
+
+
+
+if(jad=="")
+ {
+
+ document.regis.jaddr.focus();
+ return false;
+}
+
+if(jm=="")
+ {
+
+ document.regis.jmb.focus();
+ return false;
+}
+if(jn=="")
+ {
+ 
+ document.regis.jnm.focus();
+ return false;
+}
+
+
+return true;
+}
+</script>
+</head>
+<body>
+<div id="main">
+<nav>
+<ul>
+<li><a href="menu.html">Home</a></li>
+<li><a href="registrationadmin.html">registration</a></li>
+<li><a href="modelsdetails.html">models</a></li>
+<li><a href="judgesdetails.html">judges</a></li>
+<li><a href="eventdetails.html">events</a></li>
+<li><a href="adminlogin.php">logout</a></li>
+</ul>
+</nav>
+<img src="images/IMG_2133.JPG" width="1500" height="800" alt=""/>
+</div>
+<div class="box3">
+  <h2>Judges Form</h2>
+<form method=post action=judgesoperation.php name=regis>
+<div class="inputBox">
+ <label>Enter Judges Name</label><input type=text name=jnm title="enter character only" onchange="valid()"/>
+<label>Enter Mobile No</label><input type=text name=jmb title="enter 10 digit mobile number only" onchange="valid()"/>
+<label>Address</label><input type=text name=jaddr title="enter address please" onchange="valid()"/>
+<label>Enter Email Id</label><input type=email name=jemail title="enter valid email id plz"  onchange="valid()"/>
+<label>Enter Date</label><input type="date" name=dt  title="plzz select date "onchange="valid()"/>	
+<font color=white>Select Academic Year</font>
+<select name=s1><option value="2017">2017</option>
+<option  selected value="2018">2018</option> 
+<option value="2019">2019</option> 
+<option value="2020">2020</option></label></select><br><br>
+<font color=white>Select Month</font>
+<select name=s2><option value="January">January</option>
+<option  selected value="Febrary">Febrary</option>
+<option value="March">March</option>
+<option value="April">April</option>
+<option value="May">May</option>
+<option value="June">June</option>
+<option value="July">July</option>
+<option value="August">August</option>
+<option value="September">September</option>
+<option value="Octomber">Octomber</option>
+<option value="November">November</option>
+<option value="December">December</option></select><br>
+</div>
+	
+	<br><input type=submit value=Save name=Save>
+	<input type=submit value=Display  name=Display>
+	<input type=submit value=Delete  name=remove>
+	<input type=submit value=Update name=Update>
+	<input type=submit value=cancel name=cancel>
+	
+	
+</form>
+</div>
+</body>
+</html>

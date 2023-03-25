@@ -1,0 +1,169 @@
+
+<!doctype html>
+
+<html>
+<meta charset="utf-8">
+<head><title>Models Details</title>
+<link rel="stylesheet" href="css/cssfile.css">
+<link rel="stylesheet" href="css/cssfilemenu.css">
+<script type="text/javascript">
+function valid()
+{
+var mn=document.regis.nm.value;
+var mid=document.regis.eid.value;
+var mmno=document.regis.mmno.value;
+var mad=document.regis.ad.value;
+var mht=document.regis.ht.value;
+var mag=document.regis.age.value;
+var mex=document.regis.ex.value;
+var mdt=document.regis.dt.value;
+var regex = /^[a-zA-Z ]{2,30}$/;
+var re=/^(\+91-|\+91|0)?\d{10}$/;
+var readdr=/^[a-zA-Z0-9\s,.:='-]{3,}$/;
+var emch=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+var rehgt=/^[0-9]+ ?(\'|ft|cm|meters|feet|in|inches|\")?( *[1-9]+ ?(\"|inches|in|cm)?)?$/;
+var regexe= /^[0-9]$/;
+var reage=/^[0-9]{2}$/;
+var remobile=/^[0-9]{10}$/;
+ var valid = true;
+
+if (!regex.test(mn)) 
+{
+ valid = false;  
+     document.regis.nm.value="";
+    document.regis.nm.focus();
+    return false;
+}
+
+
+
+if(!emch.test(mid))
+{
+ valid = false;
+document.regis.eid.value="";
+document.regis.eid.focus();
+}
+
+if(!remobile.test(mmno))
+{
+ valid = false;
+document.regis.mmno.value="";
+document.regis.mmno.focus();
+}
+
+
+if(!readdr.test(mad))
+{
+ valid = false;
+document.regis.ad.value="";
+document.regis.ad.focus();
+}
+
+
+if(!rehgt.test(mht))
+{
+ valid = false;
+document.regis.ht.value="";
+document.regis.ht.focus();
+}
+ 
+
+if(!reage.test(mag))
+{
+ valid = false;
+document.regis.age.value="";
+document.regis.age.focus();
+}
+
+if(mag<=0 || mag>100 )
+{
+ valid = false;
+document.regis.age.value="";
+document.regis.age.focus();
+}
+
+
+
+if(!regexe.test(mex))
+{
+ valid = false;
+document.regis.ex.value="";
+document.regis.ex.focus();
+}
+
+if(mex<0)
+{
+ valid = false;
+document.regis.ex.value="";
+document.regis.ex.focus();
+}
+
+
+ return valid;
+}
+
+</script>
+</head>
+<body>
+<div id="main">
+<nav>
+<ul>
+<li><a href="menu.html">Home</a></li>
+<li><a href="registrationadmin.html">registration</a></li>
+<li><a href="modelsdetails.html">models</a></li>
+<li><a href="judgesdetails.html">judges</a></li>
+<li><a href="eventdetails.html">events</a></li>
+<li><a href="adminlogin.php">logout</a></li>
+</ul>
+</nav>
+<img src="images/indian-female-models-for-shoots-500x500.jpg" width="1500" height="800" alt=""/>
+<div class="box3">
+<h2 >Models Details</h2>
+<form method=post action="modelsoperation.php" name=regis>
+   <div class="inputBox">
+<input type=text  placeholder="Enter Model Name" name="nm"  title="plz enter only alphabet. e.g. john"  onchange="valid()"/>
+<input type=text  placeholder="Enter Email Id"     name="eid" title="enter valid email id"   onchange="valid()"/>
+<input type=text  placeholder="Enter mobile no."     name="mmno" title="10 digit number"   onchange="valid()"/>
+<input type=text  placeholder="Enter Address"     name="ad"   title="plz enter address"  onchange="valid()"/>
+<input type=text  placeholder="Enter Height"       name="ht"  title="You can enter height in (eg:5ft/2cm/5meters/5feet or 5ft 2in/5ft 2inches/5feet 2cm )"    onchange="valid()"/> 
+<input type=text  placeholder="Enter Age"           name="age"   onchange="valid()"/ title="put age more then 0 and less then 100">
+<input type=text  placeholder="Enter Experience"  name="ex"    onchange="valid()"/ title="enter in numbers (if non experience then put 0)">
+<font clor=gray><input type=date placeholder="Enter Date" name="dt" onchange="valid()"/></font>	   
+<font color=gray>Select Year</font>
+<select name=s1>
+<option  selected value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option></select><br><br>
+<font color=gray>Select Month</font>
+<select name=s2>
+<option  selected value="January">January</option>
+<option value="Febrary">Febrary</option>
+<option value="March">March</option>
+<option value="April">April</option>
+<option value="May">May</option>
+<option value="June">June</option>
+<option value="July">July</option>
+<option value="August">August</option>
+<option value="September">September</option>
+<option value="Octomber">Octomber</option>
+<option value="November">November</option>
+<option value="December">December</option></select>
+</div>
+<br><fieldset>
+<div class="some-class">
+<input type="radio" name=r1 value="Male" checked >
+<label ><font color=white>Male</font></label>
+<input type="radio" name=r1 value="Female" >
+<label ><font color=white>Female</font></label>
+</div>
+</fieldset>
+ <br>    <input type=submit value=Save name=Save>
+	<input type=submit value=Display name=Display>
+   	<input type=submit value=Update name=Update>
+	<input type=submit value=Delete name=remove>
+	<input type=submit value=cancel name=cancel>
+</form>
+</div>
+</body>
+</html>

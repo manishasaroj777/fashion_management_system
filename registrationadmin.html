@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html>
+<meta charset="utf-8">
+<head><title>Registration Form</title>
+<link rel="stylesheet" href="css/cssfile.css">
+<link rel="stylesheet" href="css/cssfilemenu.css">
+</head>
+<body>
+<div id="main">
+<nav>
+<ul>
+<li><a href="menu.html">Home</a></li>
+<li><a href="registrationadmin.html">registration</a></li>
+<li><a href="modelsdetails.html">models</a></li>
+<li><a href="judgesdetails.html">judges</a></li>
+<li><a href="eventdetails.html">events</a></li>
+<li><a href="adminlogin.php">logout</a></li>
+</ul>
+</nav>
+
+<img src="images/IMG_2133.JPG" width="1500" height="800" alt=""/>
+<div class="box2">
+ <h2>Registration Form  Details</h2>
+
+<form  method=post action=registrationop.php>
+
+ <div class="inputBox">
+<input type=text placeholder="First Name" name=nm >
+</div>
+
+ <div class="inputBox">
+<input type=text placeholder="Last Name"  name=lnm><br>
+</div>
+
+<div class="inputBox">
+<input type=text placeholder="Enter Email" name=email><br>
+</div>
+
+<div class="inputBox">
+<input type=text placeholder="Mobile No"  name=mob><br>
+</div>
+
+<div class="inputBox">
+<input type=password placeholder="Enter Password"  name=pass>
+</div>
+
+<div class="inputBox">
+<input type=password placeholder="Re-Enter"  name=rpass><br>
+</div>
+
+<div class="inputBox">
+<input type=date placeholder="date"  name=dt><br>
+</div>
+
+
+<fieldset>
+<div class="some-class">
+<input type="radio" name=r1 value="Male">
+<label for="m"><font color=gray>Male</font></label>
+<input type="radio" name=r1 value="Female">
+<label for="f"><font color=gray>Female</font></label>
+</div>
+</fieldset>
+<div class="inputBox1">	
+<br>
+	<input type=submit value=Display name=Display>
+   	<input type=submit value=Update name=Update>
+	<input type=submit value=Delete name=remove>
+	<input type=submit value=cancel name=cl>
+</div>
+</form>
+</div>
+</body>
+</html>

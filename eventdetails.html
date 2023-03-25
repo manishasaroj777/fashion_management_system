@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html>
+<meta charset="utf-8">
+<head><title>Event Details</title>
+<link rel="stylesheet" href="css/cssfile.css">
+<link rel="stylesheet" href="css/cssfilemenu.css">
+<script type="text/javascript">
+function valid()
+{
+
+var str=document.regis.nm.value;
+var st=document.regis.place.value;
+var dtt=document.regis.dt.value;
+var regex = /^[a-zA-Z ]{2,30}$/;
+if (!regex.test(str)) 
+{
+  
+     document.regis.nm.value="";
+    document.regis.nm.focus();
+    return false;
+}
+
+
+ if(str=="")
+ {
+ 
+ document.regis.nm.focus();
+ return false;
+}
+
+if(st=="")
+ {
+
+ document.regis.place.focus();
+ return false;
+}
+
+if(dtt=="")
+ {
+
+ document.regis.dt.focus();
+ return false;
+}
+return true;
+}
+</script>
+</head>
+<body>
+<div id="main">
+<nav>
+<ul>
+<li><a href="menu.html">Home</a></li>
+<li><a href="registrationadmin.html">registration</a></li>
+<li><a href="modelsdetails.html">models</a></li>
+<li><a href="judgesdetails.html">judges</a></li>
+<li><a href="eventdetails.html">events</a></li>
+<li><a href="adminlogin.php">logout</a></li>
+</ul>
+</nav>
+<img src="images/IMG_2136.JPG" width="1500" height="700" alt=""/>
+<div class="box">
+  <h2 >Event Details</h2>
+<form action="eventoperation.php" method="post" name="regis">
+ <div class="inputBox">
+<input type=text placeholder="Enter Event Name" name=nm title="enter character only" onchange="valid()"/>
+<input type=text placeholder="Enter Place"  name=place title="enter place plz" onchange="valid()"/>
+<input type="date" placeholder="Date" name=dt name=place title="select date plz" onchange="valid()"/>
+<font color=gray>Select Academic Year</font>
+<select name=s1>
+<option selected value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option></select><br><br>
+<font color=gray>Select Month</font>
+<select name=s2>
+<option selected value="January">January</option>
+<option value="Febrary">Febrary</option>
+<option value="March">March</option>
+<option value="April">April</option>
+<option value="May">May</option>
+<option value="June">June</option>
+<option value="July">July</option>
+<option value="August">August</option>
+<option value="September">September</option>
+<option value="Octomber">Octomber</option>
+<option value="November">November</option>
+<option value="December">December</option></select>
+</div>
+<br>      <input type=submit value=Save name=Save >
+	<input type=submit value=Display name=Display>
+   	<input type=submit value=Update name=Update>
+	<input type=submit value=Delete name=remove>
+	<input type=submit value=cancel name=cancel>
+</form>
+</div>
+</body>
+</html>
